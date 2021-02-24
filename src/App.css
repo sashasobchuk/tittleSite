@@ -1,0 +1,32 @@
+
+* {
+    box-sizing: border-box
+}
+
+
+.all {
+    background-image: url("./../src/acces/foto.jpg") ;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vw;
+
+}
+
+.body {
+    text-align: center;
+    margin-top: 10px;
+    height: 70vh;
+
+}
+
+.header {
+     height: 10vh;
+}
+
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+}

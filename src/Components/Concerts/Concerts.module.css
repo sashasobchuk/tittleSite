@@ -1,0 +1,28 @@
+/*{*/
+/*    box-sizing: border-box*/
+/*;*/
+/*}*/
+
+/*.item {*/
+/*    display: flex;*/
+/*    border: black double;*/
+/*    width: 100%;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+
+/*}*/
+
+/*.image {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.item div {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.image img {*/
+/*    width: 30%;*/
+/*    overflow: hidden;*/
+
+/*}*/

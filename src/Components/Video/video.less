@@ -1,0 +1,32 @@
+@import "../../acces/colors";
+.videoPage{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-flow: row wrap;
+
+}
+.videoItem{
+  flex:auto;
+  width: 220px;
+  margin: .5vw;
+  height: auto;
+  background-color: @slize-background-color;
+  border-radius: 5px;
+
+
+  &__videoTag{
+    border-radius: 10px;
+    overflow: hidden;
+
+  }
+
+
+  &__comment{
+   display:flex;
+    margin: 2px;
+    border-radius: 10px;
+    background-color: @slize-background-color;
+  }
+}

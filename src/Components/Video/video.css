@@ -1,0 +1,26 @@
+.videoPage {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+.videoItem {
+  flex: auto;
+  width: 220px;
+  margin: 0.5vw;
+  height: auto;
+  background-color: #ffffff50;
+  border-radius: 5px;
+}
+.videoItem__videoTag {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.videoItem__comment {
+  display: flex;
+  margin: 2px;
+  border-radius: 10px;
+  background-color: #ffffff50;
+}
+/*# sourceMappingURL=video.css.map */

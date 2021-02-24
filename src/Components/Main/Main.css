@@ -1,0 +1,22 @@
+/* Слайдер */
+.slider {
+    height: 100%;
+    padding-top: 40vh;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    width:80vw;
+    position: relative;
+text-align: center;
+}
+.slider > div  {
+    width: 24%;
+    height: 100%;
+    flex: auto;
+    float: left;
+    margin: 0.5%;
+}
+.slide  > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6%;
+}
