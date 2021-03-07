@@ -9,8 +9,19 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Video from "./Components/Video/Video";
 import Concerts from "./Components/Concerts/Concerts";
 import Contacts from "./Components/Contacts/Contacts";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {auth} from "./redux/header.reducer";
 
 const App = () => {
+    const isAuth = useSelector(state=>state.header.isAuth)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(auth())
+    },[isAuth])
+
+
+
     return <div className='all'>
         <div >
           <BrowserRouter>

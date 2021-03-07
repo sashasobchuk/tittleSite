@@ -1,19 +1,26 @@
-import React, {useEffect, useState} from "react";
 import  './foto.css'
 import FotoItem from "./fotoItem";
-import image1 from "../../acces/forFoto/1.png";
+import {useDispatch, useSelector} from "react-redux";
+import AddFotoItem from "./AddFotoItem";
+import { DownloadFotoPage} from "../../redux/fotoPageReducer";
+import React, {useEffect} from "react";
+import PopUp from "../popUp/PopUp";
+import FullFotoItem from "./fullFotoItem/fullFotoItem";
 
 const Foto = () => {
+    const fotoItems = useSelector(state=> state.fotoPage.fotoItems)
+    const dispatch = useDispatch()
+    const isAuth =useSelector(state =>state.header.isAuth)
+    useEffect(() => {dispatch(DownloadFotoPage())}, [fotoItems.fotoComments])
 
     return <div >
         <div className='fotoPage'>
-            <FotoItem/>
-            <FotoItem/>
-            <FotoItem/>
-            <FotoItem/>
-            <FotoItem/>
-            <FotoItem/>
-            <FotoItem/>
+            { fotoItems.map(item=>
+                <FotoItem  item={item} />
+            )}
+            {isAuth && <AddFotoItem  />}
+            <PopUp/>
+            <FullFotoItem/>
         </div>
 
     </div>

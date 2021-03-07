@@ -8,17 +8,21 @@
 
 }
 .videoItem{
+  position: relative;
   flex:auto;
   width: 220px;
-  margin: .5vw;
+  margin: 1%;
   height: auto;
   background-color: @slize-background-color;
   border-radius: 5px;
+  z-index: 0;
 
 
   &__videoTag{
     border-radius: 10px;
     overflow: hidden;
+    min-height: 150px;
+    max-height: 400px;
 
   }
 
@@ -28,5 +32,17 @@
     margin: 2px;
     border-radius: 10px;
     background-color: @slize-background-color;
+  }
+  &__deleteItem{
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 2;
+
+    input{
+      background-color: transparent;
+      border: 0;
+      font-size: 30px;
+    }
   }
 }

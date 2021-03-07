@@ -53,4 +53,5 @@
  }
 .rightHeader{
     text-align: end;
+    cursor: default;
 }

@@ -1,10 +1,22 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import clas from './header.module.css'
-import logoFoto from './../../acces/foto/bird2.png'
-import Contacts from "../Contacts/Contacts";
+import {useDispatch, useSelector} from "react-redux";
+import Login from "../../acces/LoginComponent/Login";
+import { logAut, showLogin} from "../../redux/header.reducer";
 
 const Header = () => {
+    const isAuth = useSelector(state=>state.header.isAuth)
+    const dispatch= useDispatch()
+
+    const LoginHandler=()=>{
+        dispatch(showLogin())
+    }
+
+    function logAutHaandler() {
+        dispatch(logAut())
+    }
+
     return <div>
 
         <div className={clas.allHeader} >
@@ -18,9 +30,9 @@ const Header = () => {
                 <div><NavLink to="/Concerts">Concerts </NavLink></div>
                 <div><NavLink to="/Contacts">Contacts </NavLink></div>
             </div>
-            <div className={clas.rightHeader}> language</div>
+            <div className={clas.rightHeader}> {isAuth ===true ?<span onClick={logAutHaandler} >LogAut</span> :<span onClick={LoginHandler}>Login</span> }</div>
 
-
+            <Login/>
         </div>
 
 
