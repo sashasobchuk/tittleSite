@@ -1,48 +1,72 @@
-import './App.css';
+import './app.css';
 import React from "react";
 
-import Foto from "./Components/Foto/Foto";
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import {BrowserRouter, Route} from "react-router-dom";
-import Video from "./Components/Video/Video";
 import Concerts from "./Components/Concerts/Concerts";
 import Contacts from "./Components/Contacts/Contacts";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {auth} from "./redux/header.reducer";
+import background from "./acces/foto.jpg"
+
+const Foto = React.lazy(()=>import("./Components/Foto/Foto"))
+const Video = React.lazy(()=>import("./Components/Video/Video"))
+
+//const Dialogs = React.lazy(() => import(`./components/Dialogs/dialogs`));
+
 
 const App = () => {
+    /*  заисуємо Id користувача */
+    !localStorage.getItem('userId' ) &&  localStorage.setItem('userId',Math.random().toString(17.2))
     const isAuth = useSelector(state=>state.header.isAuth)
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch(auth())
     },[isAuth])
 
-
-
     return <div className='all'>
         <div >
-          <BrowserRouter>
-              <div className='header'>
-                  <Header />
+            <div className='all__background'>
+                <img  src={background} alt=""/>
+
+            </div>
+
+            <BrowserRouter>
+              <div className='all__header'>
+                  <div>
+                      <Header />
+                  </div>
               </div >
-              <div className='body'>
+              <div className='all__body'>
                   <Route path="/Main" render={() => <Main />} />
-                  <Route path="/Video" render={() => <Video />} />
-                  <Route path="/Foto" render={() => <Foto />} />
+                  <Route path="/" render={() => <Main />} />
                   <Route path="/Concerts" render={() => <Concerts />} />
                   <Route path="/Contacts" render={() => <Contacts />} />
+
+                  <Route path="/Foto" render={() =>{
+                      return <React.Suspense fallback={<div> foto is downloading</div>}>
+                          <Foto/>
+                      </React.Suspense>
+                  }} />
+                  <Route path="/Video" render={() =>{
+                      return <React.Suspense fallback={<div> video is downloading</div>}>
+                          <Video/>
+                      </React.Suspense>
+                  }} />
+
               </div>
 
-                  <div className='footer'>
-                      <Footer />
+                  <div className='all__footer'>
+                      <div>
+                          <Footer />
+                      </div>
                   </div>
 
           </BrowserRouter>
         </div>
-
     </div>
 }
 

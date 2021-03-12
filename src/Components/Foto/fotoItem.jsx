@@ -8,15 +8,13 @@ import {
     shoveFullFotoItemImgSrc,
 } from "../../redux/fotoPageReducer";
 import {hostUrl} from "../../acces/config"
-import {useRef} from "react";
 
 
 const FotoItem = ({item}) => {
     const [inputValue, changeInputValue] = useState('комент заглушка')
     const dispatch = useDispatch()
-    const inputRef = useRef()
+    //const inputRef = useRef()
     const isAuth = useSelector(state=>state.header.isAuth)
-
     const ChangeInputHandler = (e) => {
         changeInputValue(e.currentTarget.value)
     }
@@ -31,7 +29,9 @@ const FotoItem = ({item}) => {
         dispatch(addComment_T(inputValue, item._id))
         /** зануляєм після відправлення**/
         changeInputValue('')
-        /** фокусуємо відразу після розфукусування(надаті на кнопку) що продовжувати писати */
+
+
+
     }
     const deleteCommentHandler = (commentId) => {
         dispatch(DeleteComment_T(commentId))
@@ -45,23 +45,24 @@ const FotoItem = ({item}) => {
 
 /**/
     const foto = item._id === 'standard' ? `${item.image_Url_Name}` : `${hostUrl + item.image_Url_Name}`
-
     return (<>
         <div className='fotoItem'>
             <span className='fotoItem__tittle'> назва</span>
              <img className='fotoItem__imgDiv' onClick={onFullImgHandler} width='100%' src={foto} alt={foto}/>
-            {isAuth ===true &&<div className= 'fotoItem__deleteItem'><input onClick={deleteFotoItemHandler} type="button" value='x'/></div>}
+            {isAuth  && <div className= 'fotoItem__deleteItem'><input onClick={deleteFotoItemHandler} type="button" value='x'/></div>}
 
             <div className='fotoItem__comment'>
                 {item.fotoComments.map(comment =>
-                    <div className='fotoItem__comment__main'>
-                        <span>{comment.value}<span onClick={() => deleteCommentHandler(comment._id)} className='fotoItem__comment__delete_X'>X</span>
+                    <div key={comment._id} className='fotoItem__comment__main'>
+                        <span>{comment.value}
+                            {(isAuth  || comment.userId === localStorage.getItem('userId'))
+                            && <span onClick={() => deleteCommentHandler(comment._id)} className='fotoItem__comment__delete_X'>X</span>}
                         </span>
                     </div>
                 )}
 
                 <div className='fotoItem__comment__input'>
-                    <input type="text" placeholder='comment' ref={inputRef} value={inputValue} onKeyDown={(e)=>enterAddComment(e)}
+                    <input type="text" placeholder='comment'  value={inputValue} onKeyDown={(e)=>enterAddComment(e)}
                            onChange={(e) => ChangeInputHandler(e)}/>
                     <button onClick={() => addCommentHandler()}> додати</button>
                 </div>

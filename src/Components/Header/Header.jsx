@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import clas from './header.module.css'
+import './header.css'
 import {useDispatch, useSelector} from "react-redux";
 import Login from "../../acces/LoginComponent/Login";
 import { logAut, showLogin} from "../../redux/header.reducer";
@@ -19,22 +19,23 @@ const Header = () => {
 
     return <div>
 
-        <div className={clas.allHeader} >
-            <div className={clas.leftheader}>
+        <div className='allHeader' >
+            <div className='allHeader__leftheader'>
                 <span>MySyte.com </span>
             </div>
-            <div className={clas.headerMain}>
-                <div><NavLink to="/Main"> Main page </NavLink></div>
-                <div><NavLink to="/Foto">Foto </NavLink></div>
-                <div><NavLink to="/Video">Video </NavLink></div>
-                <div><NavLink to="/Concerts">Concerts </NavLink></div>
-                <div><NavLink to="/Contacts">Contacts </NavLink></div>
+            <div className='allHeader__headerMain'>
+                <div><NavLink activeClassName='active' to="/Main"> Main page </NavLink></div>
+                <div><NavLink activeClassName='active' to="/Foto">Foto </NavLink></div>
+                <div><NavLink activeClassName='active' to="/Video">Video </NavLink></div>
+                <div><NavLink activeClassName='active' to="/Concerts">Concerts </NavLink></div>
+                <div><NavLink activeClassName='active' to="/Contacts">Contacts </NavLink></div>
             </div>
-            <div className={clas.rightHeader}> {isAuth ===true ?<span onClick={logAutHaandler} >LogAut</span> :<span onClick={LoginHandler}>Login</span> }</div>
-
-            <Login/>
+            <div className='allHeader__rightHeader'> {isAuth ===true
+                ? <span onClick={logAutHaandler} >LogAut</span>
+                : <span onClick={LoginHandler}>Login</span> }</div>
         </div>
 
+        <Login/>
 
     </div>
 }

@@ -23,12 +23,12 @@ export const uploadNewItem = async (foto) => {
          alert('problem in uploadNewItem', e)
     }
 }
-export const addCommentAPI = async (text,itemId) => {
+export const addCommentAPI = async (text,itemId,userId) => {
      try {
         return await axios.post(`${hostUrl}foto/addComment`, {
-
              comment:text,
-             fotoItemId:itemId
+             fotoItemId:itemId,
+             userId:userId
 
         },{})
 
@@ -36,12 +36,20 @@ export const addCommentAPI = async (text,itemId) => {
          alert('problem in addCommentAPI', e)
     }
 }
-export const deleteCommentAPI = async (commentId) => {
+export const AdmindeleteCommentAPI = async (commentId) => {
      try {
-        return await axios.delete(`${hostUrl}foto/deleteComment?commentID=${commentId}`,{})
-
+        return await axios.delete(`${hostUrl}foto/adminDeleteComment?commentID=${commentId}`,{
+            headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+        })
     } catch (e) {
-         alert('problem in deleteCommentAPI', e)
+         console.log('problem in deleteCommentAPI', e)
+    }
+}
+export const deleteCommentAPI = async (commentId,userId) => {
+     try {
+        return await axios.delete(`${hostUrl}foto/DeleteComment?commentID=${commentId}&userId=${userId}`,{})
+    } catch (e) {
+         console.log('problem in deleteCommentAPI', e)
     }
 }
 export const deleteItemAPI = async (ItemId) => {

@@ -23,23 +23,33 @@ export const uploadNewItem = async (video) => {
         alert('problem uploadNewItem', e)
     }
 }
-export const addCommentAPI = async (text,itemId) => {
+
+export const addCommentAPI = async (text,itemId,userId) => {
     try {
         return await axios.post(`${hostUrl}video/addComment`, {
-
             comment:text,
-            videoItemId:itemId
-
+            VideoItemId:itemId,
+            userId:userId
         },{})
 
     } catch (e) {
         alert('problem addCommentAPI', e)
     }
 }
-export const deleteCommentAPI = async (commentId) => {
+export const deleteCommentAPI = async (commentId,userId) => {
     try {
-        return await axios.delete(`${hostUrl}video/deleteComment?commentID=${commentId}`,{})
+        return await axios.delete(`${hostUrl}video/deleteComment?commentID=${commentId}&userId=${userId}`,{
+    })
+    } catch (e) {
+        alert('problem ideleteCommentAPI', e)
+    }
+}
+export const adminDeleteCommentAPI = async (commentId) => {
+    try {
+        return await axios.delete(`${hostUrl}video/AdminDeleteComment?commentID=${commentId}`,{
+        headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
 
+    })
     } catch (e) {
         alert('problem ideleteCommentAPI', e)
     }
@@ -47,7 +57,7 @@ export const deleteCommentAPI = async (commentId) => {
 export const deleteItemAPI = async (ItemId) => {
     try {
 
-        return await axios.delete(`${hostUrl}video/deleteVideoItem?videoItemId=${ItemId}`, {
+        return await axios.delete(`${hostUrl}video/deleteVideoItem?videoItemId=${ItemId}&`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             }
         )
@@ -56,25 +66,5 @@ export const deleteItemAPI = async (ItemId) => {
         alert('problem in  deleteItemAPI', e)
     }
 }
-export const LoginApi = async (email,password) => {
-    try {
-        return await axios.post(`${hostUrl}auth/login`,{
-            email,
-            password
-        },{})
-        // return await axios.delete(`${hostUrl}video/deleteComment?commentID=${commentId}`,{})
 
-    } catch (e) {
-        alert('problem LoginApi', e)
-    }
-}
-export const authApi = async () => {
-    try {
 
-        return await axios.get(`${hostUrl}auth/auth`,{headers:{
-                authorization:`Bearer ${localStorage.getItem('token')}`
-            }})
-    } catch (e) {
-        console.log('problem in authApi', e)
-    }
-}

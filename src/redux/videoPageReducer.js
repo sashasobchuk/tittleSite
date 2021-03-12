@@ -1,11 +1,15 @@
-// import img from './../acces/video/1.jpg'
-
 import video1 from "../acces/video/the-limba-andro-xo_304638.mp4"
-import {addCommentAPI, deleteCommentAPI, deleteItemAPI, getVideoPageApi, uploadNewItem} from "../api/videoApi";
+import {
+    addCommentAPI,
+    adminDeleteCommentAPI,
+    deleteCommentAPI,
+    deleteItemAPI,
+    getVideoPageApi,
+    uploadNewItem
+} from "../api/videoApi";
+import {AdmindeleteCommentAPI} from "../api/api";
 
 const SET_VIDEO_PAGE = 'SET_VIDEO_PAGE'
-
-
 
 const ADD_COMMENT = 'ADD_COMMENT'
 const DELETE_COMMENT = 'DELETE_COMMENT'
@@ -13,19 +17,21 @@ const SHOWE_POPUP = 'SHOWE_POPUP'
 const CLOSE_POPUP = 'CLOSE_POPUP'
 const SHOVE_FULL_video_ITEM = 'SHOVE_FULL_video_ITEM'
 const HIDE_FULL_video_ITEM = 'HIDE_FULL_video_ITEM'
+const userId = localStorage.getItem('userId')
+let Admin =  localStorage.getItem('token')
 
 
 const defaultStatus = {
     popupDisplay:'none',
     FullvideoItemImgSrc:'',
     FullvideoItemDisplay:'none',
-    item:{ videoComments:[]},
+    item:{ VideoComments:[]},
     videoItems: [
         {
             _id: 'standard',
             tittle: '2name of video',
             video_Url_Name: video1,
-            videoComments: [
+            VideoComments: [
                 {_id: 'm1', value: 'hello comment'},
                 {_id: 'm2', value: '2hello comment'},
             ]
@@ -39,11 +45,12 @@ const videoPageReducer = (state = defaultStatus, action) => {
                 ...state,
                 /* вертаєм стейт , в якому для кожного фотоітема йде перевірка,
                 якщо ід те шо в нас співпадає змінюємо додаючи в кінецю фотокоментів наш фотокомент*/
-                videoItems: [...state.videoItems.map(item => (item._id !== action.Item_id ?
-                        item : {...item, videoComments: [...item.videoComments, action.videoComment]}
+                videoItems: [...state.videoItems.map(item => (item._id !== action.Item_id
+                        ? item :
+                        {...item, VideoComments: [...item.VideoComments.push(action.videoComment)]}
                 ))],
                 /* добавляєм фотоітем в FullvideoItem*/
-                item: {...state.item , videoComments: [...state.item.videoComments, action.videoComment]}
+                item: {...state.item , VideoComments: [...state.item.VideoComments, action.videoComment]}
             }
         case DELETE_COMMENT:
             return {
@@ -52,14 +59,14 @@ const videoPageReducer = (state = defaultStatus, action) => {
                         item={
                             _id: item._id,
                             tittle: item.tittle,
-                            image_Url_Name: item.image_Url_Name,
-                            videoComments:item.videoComments.filter(commentItem => commentItem._id !== action.deletedId)
+                            video_Url_Name: item.video_Url_Name,
+                            VideoComments:item.VideoComments.filter(commentItem => commentItem._id !== action.deletedId)
                         }
                     )
                 )],
                 /* видаляєм з full FullvideoItem*/
-                item:{...state.item, videoComments:
-                        [...state.item.videoComments.filter(commentItem => commentItem._id !== action.deletedId)]
+                item:{...state.item, VideoComments:
+                        [...state.item.VideoComments.filter(commentItem => commentItem._id !== action.deletedId)]
                 }
 
             }
@@ -69,12 +76,7 @@ const videoPageReducer = (state = defaultStatus, action) => {
         case HIDE_FULL_video_ITEM:return {...state,FullvideoItemDisplay:'none',item:{videoComments:[]}}
         case SET_VIDEO_PAGE:
 
-            return {
-                ...state,
-                videoItems: action.videoItems
-            }
-
-
+            return {...state, videoItems: action.videoItems}
         default:
             return state
     }
@@ -98,7 +100,7 @@ export const addComment_T = (text, itemId) => async (dispatch) => {
     try {
         if (text) {
             /* перрірка що text не null undefined or '' */
-            let response = await addCommentAPI(text, itemId)
+            let response = await addCommentAPI(text, itemId,userId)
             if (response.status === 200) {
                 dispatch(addComment(response.data.videoComment, itemId))
             }
@@ -116,7 +118,8 @@ export const DeleteComment_T = (commentId) => async (dispatch) => {
     try {
         if (commentId) {
             /* перірка що commentId не null undefined or '' */
-            let response = await deleteCommentAPI(commentId)
+            let response = (Admin ? await adminDeleteCommentAPI(commentId): await deleteCommentAPI(commentId,userId))
+            // let response = await deleteCommentAPI(commentId)
             if (response.status === 200) {
                 dispatch(deleteComment(commentId))
             }
@@ -135,6 +138,7 @@ export const DeleteItem_T = (ItemId) => async (dispatch) => {
         if (ItemId) {
 
             /* перірка що commentId не null undefined or '' */
+
             let response = await deleteItemAPI(ItemId)
             if (response.status === 200) {
                 dispatch(DownloadVideoPage())

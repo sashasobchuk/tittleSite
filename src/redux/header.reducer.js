@@ -8,7 +8,8 @@ const IS_AUTH_TO_FALSE = 'IS_AUTH_TO_FALSE'
 
 const defaultStatus = {
     isAuth: false,
-    LoginDisplay: 'none'
+    LoginDisplay: 'none',
+
 }
 const HeaderReducer = (state = defaultStatus, action) => {
     switch (action.type) {

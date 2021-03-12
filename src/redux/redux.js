@@ -4,12 +4,16 @@ import thunk from "redux-thunk";
 import fotoPageReducer from "./fotoPageReducer";
 import HeaderReducer from "./header.reducer";
 import videoPageReducer from "./videoPageReducer";
+import concertPageReducer from "./concertPageReducer";
+import MainPageReducer from "./MainPageReducer";
 
 const rootReducer = combineReducers({
 
     fotoPage:fotoPageReducer,
     header:HeaderReducer,
-    videoPage:videoPageReducer
+    videoPage:videoPageReducer,
+    concertPage:concertPageReducer,
+    MainPage:MainPageReducer,
 
 })
 

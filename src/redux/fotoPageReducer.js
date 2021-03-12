@@ -1,7 +1,14 @@
 import img from './../acces/foto/1.jpg'
 import image1 from "../acces/forFoto/1.png"
 
-import {addCommentAPI, deleteCommentAPI, deleteItemAPI, getFotoPageApi, uploadNewItem} from "../api/api";
+import {
+    addCommentAPI,
+    AdmindeleteCommentAPI,
+    deleteCommentAPI,
+    deleteItemAPI,
+    getFotoPageApi,
+    uploadNewItem
+} from "../api/api";
 
 const DOWNLOAD_FOTO = 'DOWNLOAD_FOTO'
 const ADD_COMMENT = 'ADD_COMMENT'
@@ -14,6 +21,8 @@ const SHOVE_FULL_FOTO_ITEM = 'SHOVE_FULL_FOTO_ITEM'
 const HIDE_FULL_FOTO_ITEM = 'HIDE_FULL_FOTO_ITEM'
 
 
+
+
 const defaultStatus = {
     popupDisplay:'none',
     FullFotoItemImgSrc:'',
@@ -24,9 +33,10 @@ const defaultStatus = {
             _id: 'standard',
             tittle: '2name of foto',
             image_Url_Name: image1,
+            likes:0,
             fotoComments: [
-                {_id: 'm1', value: 'hello comment'},
-                {_id: 'm2', value: '2hello comment'},
+                {_id: 'm1', value: 'hello comment',date: 0,fotoItems: '',likes:0,userId: '',},
+                {_id: 'm2', value: 'hello comment2',date: 0,fotoItems: '',likes:0,userId: '',},
             ]
         },
     ],
@@ -38,41 +48,40 @@ const fotoPageReducer = (state = defaultStatus, action) => {
                 ...state,
                 /* вертаєм стейт , в якому для кожного фотоітема йде перевірка,
                 якщо ід те шо в нас співпадає змінюємо додаючи в кінецю фотокоментів наш фотокомент*/
-                fotoItems: [...state.fotoItems.map(item => (item._id !== action.Item_id ?
-                        item : {...item, fotoComments: [...item.fotoComments, action.fotoComment]}
+                fotoItems: [...state.fotoItems.map(item => (item._id !== action.Item_id
+                        ? item
+                        : {
+                        _id: item._id,
+                        tittle: item.tittle,
+                        image_Url_Name: item.image_Url_Name,
+                        likes:item.likes,
+
+                        fotoComments: [...item.fotoComments.push(action.fotoComment)],
+                        // fotoComments: [item.fotoComments.push(action.fotoComment)],
+                        //     fotoComments: [...item.fotoComments, action.fotoComment],
+
+                        }
                 ))],
                 /* добавляєм фотоітем в FullfotoItem*/
-                item: {...state.item , fotoComments: [...state.item.fotoComments, action.fotoComment]}
+                 item: {...state.item , fotoComments: [...state.item.fotoComments, action.fotoComment]}
             }
         case DELETE_COMMENT:
             return {
                 ...state,
                 fotoItems: [...state.fotoItems.map(item => (
-                        item={
-                            _id: item._id,
-                            tittle: item.tittle,
-                            image_Url_Name: item.image_Url_Name,
-                            fotoComments:item.fotoComments.filter(commentItem => commentItem._id !== action.deletedId)
-                        }
-                    )
+                    {...item, fotoComments:[...item.fotoComments.filter(comment => comment._id !== action.deletedId)]
+                    })
                 )],
                 /* видаляєм з full FullfotoItem*/
                 item:{...state.item, fotoComments:
                         [...state.item.fotoComments.filter(commentItem => commentItem._id !== action.deletedId)]
                 }
-
             }
         case SHOWE_POPUP:return {...state,popupDisplay:'flex'}
         case CLOSE_POPUP:return {...state,popupDisplay:action.display}
         case SHOVE_FULL_FOTO_ITEM:return {...state,FullFotoItemImgSrc:action.src,FullFotoItemDisplay:'flex',item:action.item }
         case HIDE_FULL_FOTO_ITEM:return {...state,FullFotoItemDisplay:'none',item:{fotoComments:[]}}
-        case SET_FOTO_PAGE:
-            return {
-                ...state,
-                fotoItems: action.fotoPage
-            }
-
-
+        case SET_FOTO_PAGE:return {...state, fotoItems: action.fotoPage}
         default:
             return state
     }
@@ -95,8 +104,9 @@ export const DownloadFotoPage = () => async (dispatch) => {
 export const addComment_T = (text, itemId) => async (dispatch) => {
     try {
         if (text) {
+            const userId = localStorage.getItem('userId')
             /* перрірка що text не null undefined or '' */
-            let response = await addCommentAPI(text, itemId)
+            let response = await addCommentAPI(text, itemId,userId)
             if (response.status === 200) {
                 dispatch(addComment(response.data.fotoComment, itemId))
             }
@@ -112,11 +122,16 @@ export const addComment_T = (text, itemId) => async (dispatch) => {
 export const DeleteComment_T = (commentId) => async (dispatch) => {
 
     try {
-        if (commentId) {
+        const userId = localStorage.getItem('userId')
+        let Admin =  localStorage.getItem('token')
+
+        if (commentId ) {
             /* перірка що commentId не null undefined or '' */
-            let response = await deleteCommentAPI(commentId)
+            let response = (Admin ? await AdmindeleteCommentAPI(commentId): await deleteCommentAPI(commentId,userId))
             if (response.status === 200) {
                 dispatch(deleteComment(commentId))
+            }else if( response.status === 401 ){
+                console.log('permision denied')
             }
         } else {
             console.log('trouble in get back uploaded comment')
@@ -130,8 +145,8 @@ export const DeleteComment_T = (commentId) => async (dispatch) => {
 export const DeleteItem_T = (ItemId) => async (dispatch) => {
 
     try {
-        if (ItemId) {
 
+        if (ItemId) {
             /* перірка що commentId не null undefined or '' */
             let response = await deleteItemAPI(ItemId)
             if (response.status === 200) {

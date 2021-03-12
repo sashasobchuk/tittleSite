@@ -8,15 +8,16 @@ import PopUp from "../popUp/PopUp";
 import FullFotoItem from "./fullFotoItem/fullFotoItem";
 
 const Foto = () => {
+
     const fotoItems = useSelector(state=> state.fotoPage.fotoItems)
     const dispatch = useDispatch()
     const isAuth =useSelector(state =>state.header.isAuth)
-    useEffect(() => {dispatch(DownloadFotoPage())}, [fotoItems.fotoComments])
+    useEffect(() => {dispatch(DownloadFotoPage())}, [])
 
     return <div >
         <div className='fotoPage'>
             { fotoItems.map(item=>
-                <FotoItem  item={item} />
+                <FotoItem  key={item._id} item={item} />
             )}
             {isAuth && <AddFotoItem  />}
             <PopUp/>

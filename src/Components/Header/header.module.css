@@ -24,7 +24,7 @@
     justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 .headerMain div a {
     font-size: 24px;
@@ -36,8 +36,11 @@
 
 }
 .headerMain div a:hover{
-    color: #ffb11c;
+    color: #ff8224;
     opacity: 1;
+    transform: scale(1.1);
+    background-color: #ffefd240;
+    border-radius: 5px;
 
 }
 .headerMain div{
@@ -50,6 +53,7 @@
      width: 25vh;
      align-self: center;
      font-size: 1.15rem;
+    color:  #fffa5f50;
  }
 .rightHeader{
     text-align: end;
