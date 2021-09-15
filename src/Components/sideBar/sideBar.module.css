@@ -1,0 +1,23 @@
+@import "../../acces/colors.css";
+
+.sideBar {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2vw;
+    text-decoration: none;
+    width: 100%;
+    overflow: hidden;
+    border: solid 5px green;
+    height: auto;
+    position: sticky;
+    background-color: var(--slize-background-color);
+    border-radius: 10px;
+}
+
+.sideBar a {
+    text-decoration: none;
+}
+
+.first {
+    position: sticky;
+}

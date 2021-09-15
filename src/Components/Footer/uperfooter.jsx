@@ -15,35 +15,35 @@ import youtube from './../../acces/foto/uperfoter/ico-youtube.svg'
 const UperFooter =()=>{
     return <div>
         <div className={clas.countdown}>
-            <a href="" target="_blank" rel="noopener" title="iTunes">
+            <a href="/" target="_blank" rel="noopener" title="iTunes">
                 <img src={itunes} alt="iTunes"/>
             </a>
-            <a href="" title="Apple Music" target="_blank" rel="noopener">
+            <a href="/" title="Apple Music" target="_blank"  rel="noreferrer">
                 <img src={icoAppleMusic} alt="Apple Music"/>
             </a>
-            <a href="" title="Google Play" target="_blank" rel="noopener">
+            <a href="/" title="Google Play" target="_blank"  rel="noreferrer">
                 <img src={icogoogleplay} alt="Google Play"/>
             </a>
-            <a href="" title="Deezer" target="_blank" rel="noopener">
+            <a href="/" title="Deezer" target="_blank"  rel="noreferrer">
                 <img src={icoDeezer} alt="Deezer"
                      />
             </a>
-            <a href="" title="Spotify" target="_blank" rel="noopener">
+            <a href="/" title="Spotify" target="_blank"  rel="noreferrer">
                 <img src={icoSpotify} alt="Spotify"/></a>
-            <a href="" title="Amazon Music" target="_blank" rel="noopener">
+            <a href="/" title="Amazon Music" target="_blank"  rel="noreferrer">
                 <img src={icoAmazon} alt="Amazon Music"
                      />
             </a>
-            <a href="https://tidal.com/" title="TIDAL" target="_blank" rel="noopener">
+            <a href="https://tidal.com/" title="TIDAL" target="_blank" rel="noreferrer">
                 <img src={icoTidal} alt="TIDAL"/>
             </a>
-            <a href="" title="Napster" target="_blank" rel="noopener">
+            <a href="/" title="Napster" target="_blank"  rel="noreferrer">
                 <img src={napster} alt="Napster"/>
             </a>
-            <a href="" title="YouTube Music" target="_blank" rel="noopener">
+            <a href="/" title="YouTube Music" target="_blank"  rel="noreferrer">
                 <img src={youtubeMusic} alt="YouTube Music"/>
             </a>
-            <a href="" title="YouTube" target="_blank" rel="noopener">
+            <a href="/" title="YouTube" target="_blank"  rel="noreferrer">
                 <img src={youtube} alt="Youtube"/>
             </a>
         </div>

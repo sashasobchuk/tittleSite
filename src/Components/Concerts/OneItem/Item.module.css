@@ -1,0 +1,59 @@
+@import "../../../acces/colors.css";
+
+.item {
+    position: relative;
+    width: 100%;
+    overflow-x: visible;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--slize-background-color);
+    border-radius: 10px;
+    color: var(--font-color);
+}
+
+.item > div {
+    display: block;
+    font-size: 2vw;
+    margin: 10px;
+    text-align: center;
+}
+
+.delete {
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.imgDiv {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 50%;
+    width: 10%;
+    left: 90%;
+}
+
+.doneImg {
+    position: absolute;
+    height: 25px;
+    width: auto;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+
+.status2 {
+    width: 30%;
+    text-align: end;
+
+}
+
+.status {
+    position: absolute;
+    color: red;
+}
+

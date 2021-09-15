@@ -1,9 +1,9 @@
 import React from 'react'
-import clas from "./footore.module.css";
-import insta from "../../acces/foto/loverfooter/s.png";
-import fasebook from "../../acces/foto/loverfooter/f.png";
-import tick from "../../acces/foto/loverfooter/t.png";
-import youtoob from "../../acces/foto/loverfooter/y.png";
+ import clas from './footore.module.css'
+import insta from "../../acces/foto/loverfooter/instagram-new--v1.png";
+import fasebook from "../../acces/foto/loverfooter/icons8-facebook-48.png";
+import tick from "../../acces/foto/loverfooter/icons8-тик-так-48.png";
+import youtoob from "../../acces/foto/loverfooter/icons8-youtube-play-48.png";
 
 
 
@@ -11,17 +11,17 @@ import youtoob from "../../acces/foto/loverfooter/y.png";
 const LoverFooter =()=>{
     return <div>
         <div className={clas.LoverFooter}>
-            <a href="" target="_blank" rel="noopener" title="instagram">
+            <a href="https://www.instagram.com/___0sasha0___/" target="_blank" rel="noreferrer" title="instagram">
                 <img src={insta} alt="instagram"/>
             </a>
-            <a href="" title="facebook" target="_blank" rel="noopener">
+            <a href="https://www.facebook.com/profile.php?id=100009046814070" title="facebook" target="_blank"  rel="noreferrer">
                 <img src={fasebook} alt="facebook"/>
             </a>
-            <a href="" title="ticktok" target="_blank" rel="noopener">
+            <a href="/" title="ticktok" target="_blank"  rel="noreferrer">
                 <img src={tick} alt="ticktok"/>
             </a>
-            <a href="" title="youtoob" target="_blank" rel="noopener">
-                <img src={youtoob} alt="youtoob"/>
+            <a href="/" title="youtube" target="_blank"  rel="noreferrer">
+                <img src={youtoob} alt="youtube"/>
             </a>
            </div>
     </div>

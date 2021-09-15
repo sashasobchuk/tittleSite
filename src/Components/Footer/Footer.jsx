@@ -5,7 +5,7 @@ import LoverFooter from "./LowerFooter";
 
 
 const Footer = () => {
-    return <div>
+    return <div className={clas.footer}>
         <div className={clas.uperfoter}>
             <UperFooter/>
         </div>

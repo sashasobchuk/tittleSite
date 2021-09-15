@@ -1,0 +1,54 @@
+
+@import './acces/thems/colors.css';
+
+
+.all{
+    position:relative ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-image: url("./acces/foto.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+.header{
+    position: relative;
+    height: 10%;
+}
+.body {
+    position:relative ;
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+
+}
+.footer {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    bottom: 0;
+    height: 10%;
+    overflow-y: hidden;
+}
+.sideFolder{
+    padding: 0.3vw;
+    border:2px double #ff5d0e;
+    border-radius: 10px;
+    background-color: var(--slize-background-color);
+}
+
+
+@media screen and (max-width: 800px ) {
+    .all{
+        /*height: 100vh;*/
+
+    }
+    .body{
+        flex-direction: column;
+    }
+
+}
+

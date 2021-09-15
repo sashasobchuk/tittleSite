@@ -1,0 +1,59 @@
+@import "../../../acces/colors.css";
+
+
+
+.iframeFolder{
+    position: relative;
+}
+.iframe {
+    border-radius: 5px;
+    z-index: 2;
+    height: 100%;
+    margin: 1px;
+}.iframe:hover{
+    transform: scale(1.05);
+}
+.deleteItem{
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 2;
+    background-color: transparent;
+    width: 2vw;
+    height: 2vw;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    border-radius: 3px;
+}
+
+.addLinkContainer{
+    border: black solid 4px;
+    height: 100%;
+    width: auto;
+    position: relative;
+}
+.input{
+    border: black solid 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+}
+.input >input,.input >button{
+    background-color: transparent;
+    backdrop-filter: blur(80px);
+    width: 100%;
+    color: #ff8224;
+
+}
+.img{
+    object-fit: contain;
+    height: 100%;
+}
+
+
+
+

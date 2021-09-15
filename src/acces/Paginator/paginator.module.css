@@ -1,0 +1,114 @@
+@import '../../acces/thems/colors.css';
+
+
+
+.pagintotrFolder{
+    border: navy solid 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item{
+    /*border: red solid 1px;*/
+    padding: 0  1vw;
+    font-size: 1.5vw;
+    max-height: 100%;
+    line-height: 1.5vw;
+    display: flex;
+}
+.leftItem{
+    display: flex;
+    flex-direction: column;
+
+
+}
+.leftItem *{
+    font-size: 1.3vw;
+    backdrop-filter: blur(10px);
+    background-color: var(--slize-background-color);
+}
+.itemValue{
+    font-weight: bold;
+    font-family:  fantasy Gabriola;
+    font-size: 1.5vw;
+}
+
+.inp{
+    line-height: 1.5vw;
+    font-size: 2vw;
+    max-height: 100%;
+    margin: 0;
+    max-width: 8vw;
+    min-width: 2vw;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.numberPages{
+    display: flex;
+    flex-direction: row;
+    /*border: red solid 3px;*/
+}
+.numberOnePages,.numberOneActivPages{
+    padding:  0.2vw  0.5vw;
+    margin: 0.2vw;
+    border-radius: 5px;
+    background-color: var(--paginatorUnactiv);
+    text-decoration: none;
+
+}
+.numberOnePages * , .numberOneActivPages *{
+    color: var(--font-color);
+    cursor: pointer;
+
+}
+.numberOneActivPages{
+    padding:  0.2vw 0.5vw;
+    margin: 0.2vw;
+    /*border:1px solid var(--paginatorActiv);*/
+    background-color: var(--paginatorActiv);
+    transform: scale(1.2);
+
+}
+.numberOnePages:hover,.numberOneActivPages:hover{
+    transform: scale(1.2);
+}
+
+
+.sortType{
+    /*border: red solid 3px;*/
+    height: 100%;
+}
+.sortType *{
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 1.2vw;
+}
+@media screen and (max-width: 750px ) {
+
+    .inp{
+        line-height: 3vw;
+        font-size: 3vw;
+    }
+    .numberOnePages,.numberOneActivPages{
+        font-size: 3vw;
+        padding:  0.6vw  0.9vw;
+        margin: 0.2vw;
+        text-decoration: none;
+
+    }
+    .leftItem *{
+        font-size: 1.8vw;
+    }
+
+}
+
+
+
+
+

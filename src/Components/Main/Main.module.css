@@ -1,0 +1,47 @@
+@import "../../acces/colors.css";
+
+.main{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 200vh;
+  overflow: hidden;
+  /*border: solid 5px greenyellow;*/
+
+}
+.Tittle{
+  text-align: center;
+  color: #687bff;
+  font-size: 2vw;
+  font-weight: bold;
+  position: relative;
+  top: 2vw;
+}
+.fotoSlider,.videoSlider,.youtoobeSlider{
+  position: relative;
+  margin:4% 5% ;
+  border: solid 5px black;
+  border-radius: 5px;
+  width: 90%;
+  height: 30%;
+  min-height: 100px;
+  overflow-y: visible;
+  /*overflow-x:scroll;*/
+
+}
+.fotoContainer,.videoContainer,.youtoobeContainer{
+  display: flex;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: scroll;
+  background-color: var(--slize-background-color);
+}
+.youtoobeContainer >div{
+  height: 100%;
+  width: auto;
+  /*padding: 0 2vw;*/
+}
+

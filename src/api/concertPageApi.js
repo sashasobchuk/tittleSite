@@ -1,12 +1,10 @@
-import * as axios from "axios";
-import {hostUrl} from "../acces/config"
-
+import {instanse} from "./api";
 
 
 export const getConcertPageApi = async () => {
 
     try {
-        return await axios.get(`${hostUrl}concerts/getPage`,{
+        return await instanse.get(`concerts/getItems`,{
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
 
@@ -14,16 +12,16 @@ export const getConcertPageApi = async () => {
         alert('proplemin getConcertPageApi', e)
     }
 }
-export const AddCItemAPI = async (date,citi,status,isDone) => {
-    try {
-        return await axios.post(`${hostUrl}concerts/addItem`,{
-                date:date,
-                citi:citi,
-                status:status,
-                isDone:isDone
-            },
-            { headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
+export const addCItemAPI = async (date,citi,status,isDone,text='') => {
 
+    // debugger
+    try {
+        const formData = new FormData()
+        formData.append('status',status)
+        formData.append('date',date)
+        formData.append('citi',citi)
+        formData.append('text',text)
+        return await instanse.post(`concerts/setItem`,formData,
         )
 
     } catch (e) {
@@ -31,30 +29,18 @@ export const AddCItemAPI = async (date,citi,status,isDone) => {
     }
 }
 
-export const deleteCItemAPI = async (_id) => {
+export const deleteCItemAPI = async ( _id) => {
+    debugger
     try {
-        return await axios.delete(`${hostUrl}concerts/deleteConcertItems?concertItemId=${_id}`,
-            { headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
-        )
+        return await instanse.delete(`concerts/deleteItem?id=${_id}`)
     } catch (e) {
-        alert('proplemin deleteCItemAPI', e)
+        console.log('proplemin deleteCItemAPI', e)
     }
 }
-export const ChangeCItemAPI = async (date=null,citi=null,status=null,isDone=null) => {
 
-    try {
-        return await axios.post(`${hostUrl}concerts/changeItem`,{
-                date:date,
-                citi:citi,
-                status:status,
-                isDone:isDone
-            },
-            { headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
-        )
-    } catch (e) {
-        alert('proplemin deleteCItemAPI', e)
-    }
-}
+
+
+
 
 
 

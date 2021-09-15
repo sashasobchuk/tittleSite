@@ -1,0 +1,58 @@
+@import "../../acces/colors.css";
+
+.Login {
+
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*width: 95%;*/
+    /*height: 95%;*/
+    z-index: 80;
+    background-color: var(--slize-background-login);
+    backdrop-filter: blur(10px);
+    display: flex;
+justify-content: center;
+    align-items: center;
+
+}
+
+.Login span {
+    /*font-size: 25vw;*/
+}
+
+.close {
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 5vw;
+    margin: 2.5%;
+}
+
+.form {
+    position: fixed;
+
+  border: var(--paginatorActiv) solid 3px;
+    border-radius: 10px;
+    min-width: 20%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.form *{
+    font-size: 3vw;
+
+}
+
+
+@media screen and (max-width: 850px ) {
+    .form {
+        min-width: 70%;
+    }
+    .form *{
+        font-size: 5vw;
+
+    }
+}

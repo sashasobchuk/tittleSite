@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddItem.css'
+import clas from './AddItem.module.css'
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {AddCItem} from "../../../redux/concertPageReducer";
@@ -13,26 +13,17 @@ const AddItem = () => {
     function changeStatusNameHandler(e) {changeStatus(e.currentTarget.value)}
     const [date, changeDate] = useState(new Date().toISOString())
     function changeDateHandler(e) {changeDate(e.currentTarget.value)}
-    const [isDone, changeIsDone] = useState(false)
-    const changeIsDoneHandler = () => {
-        const toDone = () => {
-            changeIsDone(false)
-        }
-        const toNotDone = () => {
-            changeIsDone(true)
-        }
-        isDone ? toDone() : toNotDone()
-
-    }
+    const [isDone, ] = useState(false)
 
     const dispatch = useDispatch()
     const addItemHandler = () => {
+        // debugger
         dispatch(AddCItem(date,citiName,status,isDone))
     }
     return (
-        <div className='addItem'>
+        <div className={clas.addItem}>
 
-            <div className='addItem__time'>
+            <div className={clas.time}>
                 <input type="date" value={date} onChange={(e) => changeDateHandler(e)}/>
 
             </div>
@@ -48,11 +39,9 @@ const AddItem = () => {
             </div>
 
             <div>
-                {isDone === true ? <span>done</span> : <span> not done))</span>}
-                <input type="button" value='changeces' onClick={changeIsDoneHandler}/>
             </div>
             <div>
-                <input className='addItem__Addbtn' type="button" value='__add__' onClick={addItemHandler}/>
+                <input className={clas.Addbtn} type="button" value='__add__' onClick={()=>(addItemHandler())}/>
             </div>
 
         </div>

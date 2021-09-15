@@ -1,0 +1,28 @@
+
+:root{
+    --red:red;
+    --slize-background-color: #ffffff50;
+    --slize-background-login: #ffffff80;
+    --slize-background-color-forTittle: #ffffff20;
+    --itemContainer-bordder: #ffed67;
+    --border-hover:#1e1802;
+    --hover-background:#ffffff90;
+    --standard-items:#060606;
+    --popup-background:#585858;
+    --fullItem-background:#585858;
+    --font-color:#330d00	;
+    --unActivItemC:#0f541c40;
+    --unActivItemC:#0f541c40;
+    --activePageColor:#7d6e0b50;
+    --headerColoer:#ffce58;
+    --paginatorUnactiv:#ffa41a50;
+    --paginatorActiv:#fa4718;
+}
+.red {
+    background-color: red
+}
+
+
+
+
+

@@ -1,3 +1,5 @@
+@import '../../acces/thems/colors.css';
+
 * {
     box-sizing: border-box
 }
@@ -6,56 +8,71 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.allHeader > div{
+    overflow: hidden;
+    /*border: red solid 3px;*/
+    max-height: 5vw;
+    margin-bottom: 0.5vw;
 
 }
 
-.leftheader span{
-    font-size: 20px;
+
+.lefName,.rightHeader{
+    font-size: 4vw;
     text-transform: uppercase;
     font-family: Verdana;
+    text-decoration: none;
+    color: var(--headerColoer);
 }
 
 
 
 .headerMain{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    /*margin: 0 auto;*/
 }
-.headerMain div a {
-    font-size: 24px;
+.headerMain >div{
+    margin:  0 1vw;
+    font-size: 2.5vw;
+    text-transform: none;
+}
+.link {
+    font-size: 3vw;
     text-decoration: none;
-    color: #ffce4b;
+    color: var(--headerColoer);
     font-family: Verdana Andalus SansSerif;
     font-weight: bold;
     opacity: 0.9;
-
+    cursor:pointer;
+    /*border: #ff8224 2px solid;*/
 }
-.headerMain div a:hover{
+.headerMain> div > *:hover{
     color: #ff8224;
-    opacity: 1;
     transform: scale(1.1);
     background-color: #ffefd240;
     border-radius: 5px;
+    /*cursor: pointer;*/
 
 }
-.headerMain div{
-    margin: 5px;
-    font-size: 20px;
-    text-transform: none;
-}
+
 
 .leftheader, .rightHeader {
-     width: 25vh;
+     width: 20vh;
      align-self: center;
-     font-size: 1.15rem;
-    color:  #fffa5f50;
- }
-.rightHeader{
-    text-align: end;
-    cursor: default;
+    cursor:pointer;
+    text-decoration: none;
+
+}
+.lefName, .rightName,.headerMain > div > a {
+    font-size: 2vw;
+}
+@media screen and (max-width: 950px ) {
+
+    .lefName, .rightName, .link {
+        font-size: 3vw;
+    }
+    .headerMain >div {
+        border-radius: 10px;
+        background-color: var(--slize-background-color-forTittle);
+    }
 }
