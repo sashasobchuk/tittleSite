@@ -1,5 +1,6 @@
 import * as axios from "axios";
 import {hostUrl} from "../acces/config"
+import {stringify} from "querystring";
 
 
 let token = localStorage.getItem('token')
@@ -12,7 +13,15 @@ export const instanse = axios.create({
     headers: {token: token, "Content-Type": "multipart/form-data"},
 })
 
+let deploy = false
+export  const errorReporte =(string,e)=>{
+    if(deploy){
+        alert(JSON.stringify(e) + string)
+    }else {
+        console.warn(JSON.stringify(e)  + string)
+    }
 
+}
 
 export const deleteItemAPI = async (ItemId) => {
      try {
@@ -20,7 +29,7 @@ export const deleteItemAPI = async (ItemId) => {
          )
      }
      catch (e) {
-         alert('problem in  deleteItemAPI', e)
+         errorReporte('problem in  deleteItemAPI', e)
     }
 }
 export const LoginApi = async (login,password) => {
@@ -30,7 +39,7 @@ export const LoginApi = async (login,password) => {
          formData.append('password',password)
          return await instanse.post(`${hostUrl}auth/login`,formData)
     } catch (e) {
-         alert('problem in LoginApi ', e)
+         errorReporte('problem in LoginApi ', e)
     }
 }
 

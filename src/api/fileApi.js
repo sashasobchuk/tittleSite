@@ -1,5 +1,6 @@
 import * as axios from "axios";
 import {hostUrl} from "../acces/config"
+import {errorReporte} from "./api";
 
 
 let token = localStorage.getItem('token')
@@ -19,7 +20,7 @@ export const getFilePageApi = async (fileType,sortType,start,limit) => {
         return await  instanse.get(`file/getFiles?fileType=${fileType}&sortType=${sortType}&start=${start}&limit=${limit}`)
 
     } catch (e) {
-         console.log('proplemin getFotoPageApi', e)
+         errorReporte('proplemin getFotoPageApi', e)
     }
 }
 export const changeCommentStatusApi = async (id,status) => {
@@ -29,7 +30,7 @@ export const changeCommentStatusApi = async (id,status) => {
          formData.append('status', Boolean( status))
         return await  instanse.post(`file/changeCommentStatus`, formData)
     } catch (e) {
-         console.log('proplemin getFotoPageApi', e)
+         errorReporte('proplemin getFotoPageApi', e)
     }
 }
 export const uploadNewItemApi = async (foto,tittle) => {
@@ -40,7 +41,7 @@ export const uploadNewItemApi = async (foto,tittle) => {
         return await instanse.post(`file/setFile`,formData)
 
     } catch (e) {
-         console.log('problem in uploadNewItem', e)
+         errorReporte('problem in uploadNewItem', e)
     }
 }
 export const addCommentAPI = async (text,itemId,userId) => {
@@ -55,14 +56,14 @@ export const addCommentAPI = async (text,itemId,userId) => {
         return await instanse.post(`file/addComment`, formData)
 
     } catch (e) {
-         console.log('problem in addCommentAPI', e)
+         errorReporte('problem in addCommentAPI', e)
     }
 }
 export const AdmindeleteCommentAPI = async (commentId,user_storage_id) => {
      try {
         return await instanse.delete(`file/deleteComment?id_comment=${commentId}&user_storage_id=${user_storage_id}`)
     } catch (e) {
-         console.log('problem in deleteCommentAPI', e)
+         errorReporte('problem in deleteCommentAPI', e)
     }
 }
 
@@ -73,7 +74,7 @@ export const deleteItemAPI = async (ItemId) => {
          )
      }
      catch (e) {
-         alert('problem in  deleteItemAPI', e)
+         errorReporte('problem in  deleteItemAPI', e)
     }
 }
 export const deleteCommentAPI = async (commentId,userId,user_storage_id) => {
@@ -81,7 +82,7 @@ export const deleteCommentAPI = async (commentId,userId,user_storage_id) => {
         return await instanse.delete(`video/deleteComment?id_comment=${commentId}&userId=${userId}&user_storage_id=${user_storage_id}`,{
         })
     } catch (e) {
-        console.log('problem ideleteCommentAPI', e)
+        errorReporte('problem ideleteCommentAPI', e)
     }
 }
 

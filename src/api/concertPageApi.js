@@ -1,4 +1,4 @@
-import {instanse} from "./api";
+import {errorReporte, instanse} from "./api";
 
 
 export const getConcertPageApi = async () => {
@@ -9,7 +9,7 @@ export const getConcertPageApi = async () => {
         })
 
     } catch (e) {
-        alert('proplemin getConcertPageApi', e)
+        errorReporte('proplemin getConcertPageApi', e)
     }
 }
 export const addCItemAPI = async (date,citi,status,isDone,text='') => {
@@ -25,7 +25,7 @@ export const addCItemAPI = async (date,citi,status,isDone,text='') => {
         )
 
     } catch (e) {
-        alert('proplemin AddCItemAPI', e)
+        errorReporte('proplemin AddCItemAPI', e)
     }
 }
 
@@ -34,7 +34,7 @@ export const deleteCItemAPI = async ( _id) => {
     try {
         return await instanse.delete(`concerts/deleteItem?id=${_id}`)
     } catch (e) {
-        console.log('proplemin deleteCItemAPI', e)
+        errorReporte('proplemin deleteCItemAPI', e)
     }
 }
 

@@ -1,4 +1,4 @@
-import {instanse} from "./api";
+import {errorReporte, instanse} from "./api";
 
 
 export const getLinks = async () => {
@@ -6,7 +6,7 @@ export const getLinks = async () => {
         return await instanse.get(`youTube/getLinks`,{})
 
     } catch (e) {
-        console.log('proplemin getVideoPageApi', e)
+        errorReporte('proplemin getVideoPageApi', e)
     }
 }
 
@@ -15,7 +15,7 @@ export const deleteItemApi = async (id) => {
         return await instanse.delete(`youTube/deleteItem?id=${id}`,{
         })
     } catch (e) {
-        console.log('problem ideleteCommentAPI', e)
+        errorReporte('problem ideleteCommentAPI', e)
     }
 }
 export const postYouTubeItem12 = async (link) => {
@@ -26,7 +26,7 @@ export const postYouTubeItem12 = async (link) => {
         {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}
         )
     } catch (e) {
-        console.log('problem ideleteCommentAPI', e)
+        errorReporte('problem ideleteCommentAPI', e)
     }
 }
 
