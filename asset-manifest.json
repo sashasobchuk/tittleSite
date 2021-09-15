@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/tittleSite/static/css/main.f8cc5351.chunk.css",
-    "main.js": "/tittleSite/static/js/main.e2e2a336.chunk.js",
-    "main.js.map": "/tittleSite/static/js/main.e2e2a336.chunk.js.map",
-    "runtime-main.js": "/tittleSite/static/js/runtime-main.d5526a2c.js",
-    "runtime-main.js.map": "/tittleSite/static/js/runtime-main.d5526a2c.js.map",
-    "static/js/2.222766bd.chunk.js": "/tittleSite/static/js/2.222766bd.chunk.js",
-    "static/js/2.222766bd.chunk.js.map": "/tittleSite/static/js/2.222766bd.chunk.js.map",
+    "main.js": "/tittleSite/static/js/main.1ba6bdd5.chunk.js",
+    "main.js.map": "/tittleSite/static/js/main.1ba6bdd5.chunk.js.map",
+    "runtime-main.js": "/tittleSite/static/js/runtime-main.8578a335.js",
+    "runtime-main.js.map": "/tittleSite/static/js/runtime-main.8578a335.js.map",
+    "static/js/2.584777fa.chunk.js": "/tittleSite/static/js/2.584777fa.chunk.js",
+    "static/js/2.584777fa.chunk.js.map": "/tittleSite/static/js/2.584777fa.chunk.js.map",
     "static/css/3.2f169212.chunk.css": "/tittleSite/static/css/3.2f169212.chunk.css",
-    "static/js/3.4f1ac14c.chunk.js": "/tittleSite/static/js/3.4f1ac14c.chunk.js",
-    "static/js/3.4f1ac14c.chunk.js.map": "/tittleSite/static/js/3.4f1ac14c.chunk.js.map",
+    "static/js/3.8d582dd4.chunk.js": "/tittleSite/static/js/3.8d582dd4.chunk.js",
+    "static/js/3.8d582dd4.chunk.js.map": "/tittleSite/static/js/3.8d582dd4.chunk.js.map",
     "static/js/4.fe4ce6bd.chunk.js": "/tittleSite/static/js/4.fe4ce6bd.chunk.js",
     "static/js/4.fe4ce6bd.chunk.js.map": "/tittleSite/static/js/4.fe4ce6bd.chunk.js.map",
     "index.html": "/tittleSite/index.html",
     "static/css/3.2f169212.chunk.css.map": "/tittleSite/static/css/3.2f169212.chunk.css.map",
     "static/css/main.f8cc5351.chunk.css.map": "/tittleSite/static/css/main.f8cc5351.chunk.css.map",
-    "static/js/2.222766bd.chunk.js.LICENSE.txt": "/tittleSite/static/js/2.222766bd.chunk.js.LICENSE.txt",
+    "static/js/2.584777fa.chunk.js.LICENSE.txt": "/tittleSite/static/js/2.584777fa.chunk.js.LICENSE.txt",
     "static/media/2.5a4fac60.jpg": "/tittleSite/static/media/2.5a4fac60.jpg",
     "static/media/app.module.css": "/tittleSite/static/media/foto.779dbaf4.jpg",
     "static/media/ico-amazon.59f66524.svg": "/tittleSite/static/media/ico-amazon.59f66524.svg",
@@ -31,9 +31,9 @@
     "static/media/loader.3gif.980ceb2f.gif": "/tittleSite/static/media/loader.3gif.980ceb2f.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5526a2c.js",
-    "static/js/2.222766bd.chunk.js",
+    "static/js/runtime-main.8578a335.js",
+    "static/js/2.584777fa.chunk.js",
     "static/css/main.f8cc5351.chunk.css",
-    "static/js/main.e2e2a336.chunk.js"
+    "static/js/main.1ba6bdd5.chunk.js"
   ]
 }
