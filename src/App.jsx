@@ -3,7 +3,7 @@ import React from "react";
 import Main from "./Components/Main/Main";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import {BrowserRouter, Route, Redirect} from "react-router-dom";
+import {BrowserRouter, Route, Redirect, HashRouter} from "react-router-dom";
 import Concerts from "./Components/Concerts/Concerts";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
@@ -26,7 +26,7 @@ const App = () => {
     }, [isAuth,dispatch])
 
     return <div className={clas.all}>
-                <BrowserRouter>
+                <HashRouter>
                     <div className={clas.header}>
                             <Header/>
                     </div>
@@ -56,7 +56,7 @@ const App = () => {
                             <Footer/>
                     </div>
 
-                </BrowserRouter>
+                </HashRouter>
     </div>
 }
 
