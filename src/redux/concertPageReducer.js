@@ -8,9 +8,15 @@ const defaultState = {
     items: [{
         id_concert: '1',
         dt_add: '2022-01-01',
-        status: 'standard',
+        status: 'som text about ...',
         citi: 'Ternopil',
-        text: ''
+        text: 'text eee'
+    },{
+        id_concert: '1',
+        dt_add: '2032-21-31',
+        status: 'som other text about ...',
+        citi: 'Ternopil',
+        text: 'text eee'
     }]
 
 }
