@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tittleSite/static/css/main.f8cc5351.chunk.css",
+    "main.css": "/tittleSite/static/css/main.98d9a180.chunk.css",
     "main.js": "/tittleSite/static/js/main.1ba6bdd5.chunk.js",
     "main.js.map": "/tittleSite/static/js/main.1ba6bdd5.chunk.js.map",
     "runtime-main.js": "/tittleSite/static/js/runtime-main.8578a335.js",
@@ -14,10 +14,9 @@
     "static/js/4.fe4ce6bd.chunk.js.map": "/tittleSite/static/js/4.fe4ce6bd.chunk.js.map",
     "index.html": "/tittleSite/index.html",
     "static/css/3.2f169212.chunk.css.map": "/tittleSite/static/css/3.2f169212.chunk.css.map",
-    "static/css/main.f8cc5351.chunk.css.map": "/tittleSite/static/css/main.f8cc5351.chunk.css.map",
+    "static/css/main.98d9a180.chunk.css.map": "/tittleSite/static/css/main.98d9a180.chunk.css.map",
     "static/js/2.584777fa.chunk.js.LICENSE.txt": "/tittleSite/static/js/2.584777fa.chunk.js.LICENSE.txt",
     "static/media/2.5a4fac60.jpg": "/tittleSite/static/media/2.5a4fac60.jpg",
-    "static/media/app.module.css": "/tittleSite/static/media/foto.779dbaf4.jpg",
     "static/media/ico-amazon.59f66524.svg": "/tittleSite/static/media/ico-amazon.59f66524.svg",
     "static/media/ico-apple-music.b0fdc2f7.svg": "/tittleSite/static/media/ico-apple-music.b0fdc2f7.svg",
     "static/media/ico-deezer.bbd507b9.svg": "/tittleSite/static/media/ico-deezer.bbd507b9.svg",
@@ -28,12 +27,13 @@
     "static/media/ico-tidal.91b20f8f.svg": "/tittleSite/static/media/ico-tidal.91b20f8f.svg",
     "static/media/ico-youtube-music.176caec0.svg": "/tittleSite/static/media/ico-youtube-music.176caec0.svg",
     "static/media/ico-youtube.46ecac75.svg": "/tittleSite/static/media/ico-youtube.46ecac75.svg",
-    "static/media/loader.3gif.980ceb2f.gif": "/tittleSite/static/media/loader.3gif.980ceb2f.gif"
+    "static/media/loader.3gif.980ceb2f.gif": "/tittleSite/static/media/loader.3gif.980ceb2f.gif",
+    "static/media/app.module.css": "/tittleSite/static/media/rap.220acfa5.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8578a335.js",
     "static/js/2.584777fa.chunk.js",
-    "static/css/main.f8cc5351.chunk.css",
+    "static/css/main.98d9a180.chunk.css",
     "static/js/main.1ba6bdd5.chunk.js"
   ]
 }
