@@ -1,12 +1,33 @@
 import {getFilePageApi} from "../api/fileApi";
+import image from '../acces/forFoto/2.jpg'
+import image2 from '../acces/forFoto/1.png'
+import image3 from '../acces/forFoto/4.gif'
+import image4 from '../acces/forFoto/11jpg.jpg'
+import image5 from '../acces/forFoto/555.jpg'
+import video from '../acces/video/v.mp4'
+import video2 from '../acces/video/2.mp4'
 
 
 const SET_FOTO_ITEMS = 'SET_FOTO_ITEMS'
 const SET_VIDEO_ITEMS = 'SET_VIDEO_ITEMS'
 
 const defaultStatus = {
-    fotoItems: [{image_Url_Name:null,_id:'standard'}],
-    videoItems: [{image_Url_Name:null,_id:'standard'}],
+    fotoItems: [
+        {image_Url_Name:image5,_id:'standard'},
+        {image_Url_Name:image,_id:'standard'},
+        {image_Url_Name:image3,_id:'standard'},
+        {image_Url_Name:image,_id:'standard'},
+        {image_Url_Name:image2,_id:'standard'},
+        {image_Url_Name:image,_id:'standard'},
+        {image_Url_Name:image4,_id:'standard'},
+        {image_Url_Name:image,_id:'standard'},
+    ],
+    videoItems: [
+        {image_Url_Name:video,_id:'standard'},
+        {image_Url_Name:video2,_id:'standard'},
+        {image_Url_Name:video,_id:'standard'},
+        {image_Url_Name:video2,_id:'standard'},
+    ],
 
 }
 const MainPageReducer = (state = defaultStatus, action) => {

@@ -42,6 +42,7 @@ const App = () => {
                         }
                         <Route path="/Main" render={() => <Main/>}/>
                         <Route exact path='/' render={() => <Redirect to={'/Main'}/>}/>
+                        <Route exact path='' render={() => <Redirect to={'/Main'}/>}/>
                         <Route path="/Concerts" render={() => <Concerts/>}/>
 
 
