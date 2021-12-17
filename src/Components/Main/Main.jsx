@@ -20,6 +20,7 @@ const   Main = () => {
         dispatch(DownLoAdMainPage(sortType,0,10))
         dispatch(downloadYouTube())
     },[dispatch,sortType])
+    // debugger
     return <div className={clas.main}>
 
         <h2 className={clas.Tittle}>PHOTOS</h2>

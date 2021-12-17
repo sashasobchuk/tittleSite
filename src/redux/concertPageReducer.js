@@ -7,14 +7,20 @@ const SET_NEW_EVENT = "SET_NEW_EVENT"
 const defaultState = {
     items: [{
         id_concert: '1',
-        dt_add: '2022-01-01',
-        status: 'som text about ...',
-        citi: 'Ternopil',
+        dt_add: ' TIME:',
+        status: 'INFORM:',
+        citi: ' CITI:',
+        text: 'text eee'
+    },{
+        id_concert: '11',
+        dt_add: '2012-11-21',
+        status: 'some inform message',
+        citi: ' Lviv',
         text: 'text eee'
     },{
         id_concert: '1',
         dt_add: '2032-21-31',
-        status: 'som other text about ...',
+        status: 'some other text about ...',
         citi: 'Ternopil',
         text: 'text eee'
     }]

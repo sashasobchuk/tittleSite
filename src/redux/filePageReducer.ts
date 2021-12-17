@@ -55,8 +55,79 @@ const defaultState:defaultStateType = {
     requestPage:3,
     loading: false,
 
-
     fileItems: [
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
+        {
+            _id: 'standard',
+            tittle: '2name of foto',
+            image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
+                'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+            fileType:'foto',
+            likes:0,
+            fileComments: [
+                {_id: 'm1', value: 'hello comment',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+                {_id: 'm2', value: 'hello comment2',date: 0,fileItems: '',likes:0,user_storage_id: '',status: false,addDate:''},
+            ],
+        },
         {
             _id: 'standard',
             tittle: '2name of foto',
@@ -159,6 +230,7 @@ export const DownloadFilePage = (fileType:string,sortType:sortType = 'ASC',start
     try {
 
         let response = await getFilePageApi(fileType,sortType,start,limit)
+
         await dispatch(changeSortType(sortType))
         await dispatch(setFilePage(response.data.items))
         await dispatch(setTotalCout(response.data.totalCount))

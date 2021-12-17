@@ -22,11 +22,15 @@ const App = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(auth())
-
     }, [isAuth,dispatch])
 
+// debugger
     return <div className={clas.all}>
-                <HashRouter>
+                <BrowserRouter
+                    // basename='http://grispy22.s62.in.ua/'
+                    // getUserConfirmation={optionalFunc}
+                    // hashType={optionalString}
+                >
                     <div className={clas.header}>
                             <Header/>
                     </div>
@@ -56,7 +60,7 @@ const App = () => {
                             <Footer/>
                     </div>
 
-                </HashRouter>
+                </BrowserRouter>
     </div>
 }
 

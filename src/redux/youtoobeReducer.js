@@ -9,10 +9,14 @@ export const ADD_ITEM = 'ADD_ITEM'
 const defaultStatus = {
     popupDisplay:'none',
     links:[
-        {id: 'standart',link:'gCt5nKuCc7E'},
+        {id: 'standart',link:'GNrdg3PzpJQ'},
+        {id: 'standart',link:'mTz0GXj8NN0'},
+        {id: 'standart',link:'jOupHNvDIq8'},
+        {id: 'standart',link:'w7ejDZ8SWv8'},
+        {id: 'standart',link:'ABQLwlE8MUA'},
+        {id: 'standart',link:'ABQLwlE8MUA'},
+        {id: 'standart',link:'ENrzD9HAZK4'},
     ]
-
-
 }
 const videoPageReducer = (state = defaultStatus, action) => {
     switch (action.type) {
@@ -32,10 +36,13 @@ export const setVideoPage=(links)=>({type:SAFE_LINKS,links})
 export const remomeItem=(id)=>({type:REMOVE_ITEM,id})
 export const setItem=(id,link)=>({type:ADD_ITEM,id,link})
 export const downloadYouTube = () => async (dispatch) => {
+    // debugger
     try {
         let response = await getLinks()
+        // debugger
         await dispatch(setVideoPage(response.data))
     }catch (e) {
+        // debugger
         console.log(e)
     }
 
@@ -43,7 +50,7 @@ export const downloadYouTube = () => async (dispatch) => {
 export const DeleteItem = (id) => async (dispatch) => {
     try {
         let response = await deleteItemApi(id)
-        // debugger
+
         if(response.status ===200){
             await dispatch(remomeItem(id))
         }

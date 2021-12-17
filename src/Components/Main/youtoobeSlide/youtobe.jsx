@@ -10,6 +10,7 @@ const Youtube = ({link}) => {
     const deleteFotoItemHandler = () => {
         dispatch(DeleteItem(link.id))
     }
+
     return (
         <div className={clas.iframeFolder}>
             <iframe className={clas.iframe}

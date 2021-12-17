@@ -11,7 +11,7 @@ import Preloader from '../../acces/Preloader/Preloader'
 
 
 const FileItem = ({props}) => {
-    const [inputValue, changeInputValue] = useState('комент заглушка')
+    const [inputValue, changeInputValue] = useState('comment')
     const dispatch = useDispatch()
     const isAuth = useSelector(state => state.header.isAuth)
     const role = useSelector(state => state.header.role)
@@ -87,8 +87,6 @@ const FileItem = ({props}) => {
                                     {comment.status ? 'shown' : 'hidden'}
                                 </button>}
                             </div>}
-
-
                         </div>
                     )}
 
@@ -96,7 +94,7 @@ const FileItem = ({props}) => {
                         <input className={clas.input} type="text" placeholder='comment' value={inputValue}
                                onKeyDown={(e) => enterAddComment(e)}
                                onChange={(e) => ChangeInputHandler(e)}/>
-                        <button className={clas.btnADD} onClick={() => addCommentHandler()}> додати</button>
+                        <button className={clas.btnADD} onClick={() => addCommentHandler()}> add</button>
                     </div>
                 </div>
             </div>

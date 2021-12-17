@@ -70,8 +70,12 @@ const Paginator = ({props}) => {
 
     useEffect(() => {
         dispatch((changeLoading(true)))
+
         dispatch(setRequestPage(startPageNumber ===0?1:startPageNumber))
+
         OnPageChange(requestPage, pageZise)
+        // debugger
+
     }, [dispatch,fileType,sortType,requestPage,pageZise])
 
     return <div className={clas.pagintotrFolder}>
