@@ -58,7 +58,7 @@ const defaultState:defaultStateType = {
     fileItems: [
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -70,7 +70,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -82,7 +82,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -94,7 +94,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -106,7 +106,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -118,7 +118,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',
@@ -130,7 +130,7 @@ const defaultState:defaultStateType = {
         },
         {
             _id: 'standard',
-            tittle: '2name of foto',
+            tittle: 'name of foto',
             image_Url_Name: 'https://images.unsplash.com/photo-1574217013471-c32c6846cef7?ixid=' +
                 'MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm90b3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
             fileType:'foto',

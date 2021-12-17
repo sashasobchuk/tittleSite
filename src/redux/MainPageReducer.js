@@ -33,7 +33,7 @@ const defaultStatus = {
 const MainPageReducer = (state = defaultStatus, action) => {
     switch (action.type) {
         case SET_FOTO_ITEMS:
-            debugger
+            // debugger
             return {...state, fotoItems: action.fotoResponse}
         case SET_VIDEO_ITEMS:
             return {...state, videoItems: action.videoResponse}
@@ -49,7 +49,7 @@ export const setVideoItems = (videoResponse) => ({type: SET_VIDEO_ITEMS, videoRe
 export const DownLoAdMainPage = (sortType,startParam,pageSize) => async (dispatch) => {
     try {
         const fotoResponse = await getFilePageApi('foto',sortType,startParam,pageSize)
-        debugger
+        // debugger
         if (fotoResponse.status === 200) {
             dispatch(setFotoItems(fotoResponse.data.items))
         }

@@ -14,7 +14,7 @@ const PopUp = ({props}) => {
         dispatch(closePopUp('none'))
     }
     const onclickImgHandler = (e) => {
-        debugger
+        // debugger
         for ( let i = 0;i<e.target.files.length ; i++){
             dispatch(MakeNewItem(e.target.files[i], fileTittle,props.fileType))
         }
